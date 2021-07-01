@@ -1,0 +1,39 @@
+<div class="container-fluid container-background">
+
+    <section class="user">
+        <div class="user_options-container">
+          <div class="user_options-text">
+            <div class="user_options-unregistered">
+              <h2 class="user_unregistered-title">Don't have an account?</h2>
+              <p class="user_unregistered-text">Click on the below link to go to the Signup page</p>
+              <a class="user_unregistered-signup" id="signup-button" href="/register">SIGN up</a>
+            </div>
+            </div>
+          
+          <div class="user_options-forms" id="user_options-forms">
+            <div class="user_forms-login">
+              <h2 class="forms_title">Login</h2>
+              <form class="forms_form" [formGroup]="credential" (ngSubmit)="loginSubmit()">
+                <fieldset class="forms_fieldset">
+                  <div class="forms_field">
+                    <input type="email" placeholder="Email" class="forms_field-input" formControlName="email" />
+                    <span class="form-errors" *ngIf="(credential.controls['email'].touched || credential.controls['email'].dirty) && credential.controls['email'].invalid && credential.controls['email'].errors?.required">
+                      Field is required.
+                    </span>
+                  </div>
+                  <div class="forms_field">
+                    <input type="password" placeholder="Password" class="forms_field-input" formControlName="password" />
+                    <span class="form-errors" *ngIf="(credential.controls['password'].touched || credential.controls['password'].dirty) && credential.controls['password'].invalid && credential.controls['password'].errors?.required">
+                      Field is required.
+                    </span>
+                  </div>
+                </fieldset>
+                <div class="forms_buttons" style="float:right">
+                  <input type="submit" value="log Up" class="forms_buttons-action" [disabled]="!credential.valid">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+</div>

@@ -1,0 +1,57 @@
+<div class="container-fluid container-background">
+
+    <section class="user">
+        <div class="user_options-container">
+          <div class="user_options-text">
+            <div class="user_options-unregistered">
+              <h2 class="user_unregistered-title">Already have an account?</h2>
+              <p class="user_unregistered-text">Click on the below link to go to the login page</p>
+              <a class="user_unregistered-signup" id="signup-button" href="/login">LOG IN</a>
+            </div>
+            </div>
+          
+          <div class="user_options-forms" id="user_options-forms">
+            <div class="user_forms-login">
+              <h2 class="forms_title">Signup</h2>
+              <form class="forms_form" [formGroup]="user" (ngSubmit)="registerSubmit()">
+                <fieldset class="forms_fieldset">
+                  <div class="forms_field">
+                    <input type="email" placeholder="Username" class="forms_field-input" formControlName="username" />
+                    <span class="form-errors" *ngIf="(user.controls['username'].touched || user.controls['username'].dirty) && user.controls['username'].invalid && user.controls['username'].errors?.required">
+                      Field is required.
+                    </span>
+                    <span class="form-errors" *ngIf="(user.controls['username'].touched || user.controls['username'].dirty) && user.controls['username'].invalid && user.controls['username'].errors?.minlength">
+                      Minimum 3 characters are required.
+                    </span>
+                    <span class="form-errors" *ngIf="(user.controls['username'].touched || user.controls['username'].dirty) && user.controls['username'].invalid && user.controls['username'].errors?.pattern">
+                      Only Alphabets are allowed.
+                    </span>
+                  </div>
+                  <div class="forms_field">
+                    <input type="email" placeholder="Email" class="forms_field-input" formControlName="email" />
+                    <span class="form-errors" *ngIf="(user.controls['email'].touched || user.controls['email'].dirty) && user.controls['email'].invalid && user.controls['email'].errors?.required">
+                      Field is required.
+                    </span>
+                    <span class="form-errors" *ngIf="(user.controls['email'].touched || user.controls['email'].dirty) && user.controls['email'].invalid && user.controls['email'].errors?.pattern">
+                      Email is not valid.
+                    </span>
+                  </div>
+                  <div class="forms_field">
+                    <input type="password" placeholder="Password" class="forms_field-input" formControlName="password" />
+                    <span class="form-errors" *ngIf="(user.controls['password'].touched || user.controls['password'].dirty) && user.controls['password'].invalid && user.controls['password'].errors?.required">
+                     Field is required.
+                    </span>
+                    <span class="form-errors" *ngIf="(user.controls['password'].touched || user.controls['password'].dirty) && user.controls['password'].invalid && user.controls['password'].errors?.minlength">
+                      Length should be grater then or equal to 6.
+                     </span>
+                  </div>
+                </fieldset>
+                <div class="forms_buttons" style="float:right">
+                  <input type="submit" value="Sign Up" class="forms_buttons-action" [disabled]='!user.valid'>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+</div>

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+.post-container{
+    position:fixed;
+    bottom:10px;
+}
+.post-container input{
+    box-shadow: 4px 4px 16px black;
+}
+
+.profile-name{
+    font-family: 'Abel', sans-serif;
+}
+
+.profile-name::before{
+    content: url("../../assets/profile.png");
+    margin-right:10px;
+}
+.quote-text{
+    font-family: 'Nunito Sans', sans-serif;
+}
+.student-container{
+    background-color:rgb(163, 119, 57);
+    background-image:linear-gradient(to bottom right,burlywood,rgb(163, 119, 57),rgb(214, 188, 155),rgb(226, 210, 188));
+    min-height:92.5vh;
+}

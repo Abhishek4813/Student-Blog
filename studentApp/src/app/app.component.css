@@ -1,0 +1,10 @@
+.navigation-list li{
+    padding:0 40px;
+}
+.nav-override{
+    background-color:rgb(155, 111, 16) !important;
+}
+.sticky-nav{
+    position:sticky;
+    top:0px;
+}
